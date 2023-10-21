@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+.pagination {
+    display: flex;
+    width: 290px;
+}
+
+.pagination a {
+    flex: 1;
+    text-decoration: none;
+    color:blue;
+}
+
+#page-prev {
+    text-align: left;
+}
+#page-next {
+    text-align: right;
+}
