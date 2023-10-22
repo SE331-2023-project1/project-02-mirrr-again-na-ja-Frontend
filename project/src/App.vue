@@ -1,31 +1,46 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import {useMessageStore} from "@/stores/message";
-import {storeToRefs} from "pinia";
+import { useMessageStore } from '@/stores/message'
+import { storeToRefs } from 'pinia'
 const store = useMessageStore()
-const {message} = storeToRefs(store)
+const { message } = storeToRefs(store)
 </script>
 
 <template>
   <header>
     <div id="flashMessage" v-if="message">
-      <h4>{{message}}</h4>
+      <h4>{{ message }}</h4>
     </div>
     <nav class="bg-blue-600 h-32 w-full">
-        <div class="flex justify-center">
-          <img
-            class="w-60 h-32"
-            src="https://1000logos.net/wp-content/uploads/2021/11/My-Hero-Academia-Logo.png"
-            alt="Logo"
-          />
-        </div>
-        <div class="absolute top-0 right-0 mt-2 mr-3 text-lg rounded-md bg-white px-3">
-          <RouterLink class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold font-mono" :to="{name:'login'}">LOGIN</RouterLink>
-        </div>        
+      <div class="flex justify-center">
+        <img
+          class="w-60 h-32"
+          src="https://1000logos.net/wp-content/uploads/2021/11/My-Hero-Academia-Logo.png"
+          alt="Logo"
+        />
+      </div>
+      <div>
+        <font-awesome-icon icon="bell" style="color: #000000;" />
+      </div>
+      <div class="absolute top-0 right-0 mt-2 mr-3 text-lg rounded-md bg-white px-3">
+        <RouterLink
+          class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold font-mono"
+          :to="{ name: 'login' }"
+          >LOGIN</RouterLink
+        >
+      </div>
     </nav>
     <div class="space-x-20 text-center font-mono text-2xl pt-2 pb-5">
-          <RouterLink class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold" :to="{name:'student'}">STUDENT</RouterLink>
-          <RouterLink class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold" :to="{name:'advisor'}">ADVISOR</RouterLink>
+      <RouterLink
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold"
+        :to="{ name: 'student' }"
+        >STUDENT</RouterLink
+      >
+      <RouterLink
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold"
+        :to="{ name: 'advisor' }"
+        >ADVISOR</RouterLink
+      >
     </div>
     <RouterView />
   </header>
