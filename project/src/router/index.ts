@@ -6,6 +6,9 @@ import StudentDetails from '@/views/event/StudentDetails.vue'
 import LoginView from '../views/LoginView.vue'
 import NProgress from 'nprogress'
 
+import AdvisorMainPage from '@/views/Advisor/AdvisorMainPage.vue'
+import AdvisorAnnouncement from '@/views/Advisor/AdvisorAnnouncement.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -36,6 +39,17 @@ const router = createRouter({
       name: 'student-detail',
       component: StudentDetails,
       props: true
+    },
+    {
+      path: '/AJ',
+      name: 'AJ-main',
+      component: AdvisorMainPage,
+      props: (route) => ({page: parseInt(route.query?.page as string || '1') })
+    },
+    {
+      path: '/announcement',
+      name: 'announcement',
+      component: AdvisorAnnouncement
     }
   ]
 })
