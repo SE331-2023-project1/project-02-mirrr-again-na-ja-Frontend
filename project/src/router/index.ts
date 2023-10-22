@@ -8,6 +8,7 @@ import NProgress from 'nprogress'
 
 import AdvisorMainPage from '@/views/Advisor/AdvisorMainPage.vue'
 import AdvisorAnnouncement from '@/views/Advisor/AdvisorAnnouncement.vue'
+import EditStudentDetail from '@/views/event/EditStudentDetail.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,12 @@ const router = createRouter({
       path: '/announcement',
       name: 'announcement',
       component: AdvisorAnnouncement
+    },
+    {
+      path: '/student/:id/edit-student',
+      name: 'edit-student',
+      component: EditStudentDetail,
+      props: true
     }
   ]
 })

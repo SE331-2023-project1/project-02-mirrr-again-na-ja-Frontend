@@ -80,6 +80,8 @@ AdvisorService.getAdvisorById(Number(props.id))
         <p>Name-Surname: {{ student.name }} {{ student.surname }}</p>
         <p>Course: {{ student.course }}</p>
         <br>
+        <p><RouterLink
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold" :to="{ name: 'student' }">Edit Profile</RouterLink></p>
 
 
         <!-- <RouterLink class="mx-auto" to="/comment">
