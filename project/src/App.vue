@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import {useMessageStore} from "@/stores/message";
-import {storeToRefs} from "pinia";
+import { useMessageStore } from '@/stores/message'
+import { storeToRefs } from 'pinia'
 const store = useMessageStore()
-const {message} = storeToRefs(store)
+const { message } = storeToRefs(store)
 </script>
 
 <template>
   <header>
     <div id="flashMessage" v-if="message">
-      <h4>{{message}}</h4>
+      <h4>{{ message }}</h4>
     </div>
     <nav class="bg-blue-600 h-18 w-full">
         <div class="flex justify-left pl-5">
@@ -24,8 +24,16 @@ const {message} = storeToRefs(store)
         </div>        
     </nav>
     <div class="space-x-20 text-center font-mono text-2xl pt-2 pb-5">
-          <RouterLink class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold" :to="{name:'student'}">STUDENT</RouterLink>
-          <RouterLink class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold" :to="{name:'advisor'}">ADVISOR</RouterLink>
+      <RouterLink
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold"
+        :to="{ name: 'student' }"
+        >STUDENT</RouterLink
+      >
+      <RouterLink
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold"
+        :to="{ name: 'advisor' }"
+        >ADVISOR</RouterLink
+      >
     </div>
     <RouterView />
   </header>
