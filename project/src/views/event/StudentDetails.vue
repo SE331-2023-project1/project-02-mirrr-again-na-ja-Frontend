@@ -80,8 +80,7 @@ AdvisorService.getAdvisorById(Number(props.id))
         <p>Name-Surname: {{ student.name }} {{ student.surname }}</p>
         <p>Course: {{ student.course }}</p>
         <br>
-        <p><RouterLink
-        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold" :to="{ name: 'student' }">Edit Profile</RouterLink></p>
+        <p><RouterLink class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold border-black border-4 px-2" :to="{ name: 'edit-student' }">Edit Profile</RouterLink></p>
 
 
         <!-- <RouterLink class="mx-auto" to="/comment">
@@ -94,7 +93,7 @@ AdvisorService.getAdvisorById(Number(props.id))
         <p class="pb-5">Comment:</p>
         <textarea class="w-80 bg-white border-black border-2 h-10" v-model="comment"></textarea>
         <br>
-        <button class="border px-3 bg-red-600 text-white text-2xl" @click="submit" >Submit</button>
+        <button class="border px-3 bg-red-600 text-white text-2xl hover:font-bold" @click="submit" >Submit</button>
     </div>
     <br>
     <div class="text-3xl text-center">

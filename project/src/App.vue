@@ -14,7 +14,7 @@ const { message } = storeToRefs(store)
     <nav class="bg-blue-600 h-18 w-full">
         <div class="flex justify-left pl-5">
           <img
-            class="w-20 h-12"
+            class="w-36 h-20"
             src="https://1000logos.net/wp-content/uploads/2021/11/My-Hero-Academia-Logo.png"
             alt="Logo"
           />
