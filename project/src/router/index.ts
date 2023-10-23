@@ -11,12 +11,19 @@ import AdvisorAnnouncement from '@/views/Advisor/AdvisorAnnouncement.vue'
 import EditStudentDetail from '@/views/event/EditStudentDetails.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import EditAdvisorDetail from '@/views/event/EditAdvisorDetails.vue'
+import AdvisorLogin from "@/views/Advisor/AdvisorLogin.vue";
+import SelectUserView from "@/views/SelectUserView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      name: 'user',
+      component: SelectUserView
+    },
+    {
+      path: '/student',
       name: 'student',
       component: StudentView,
       props: (route) => ({page: parseInt(route.query?.page as string || '1') })
@@ -70,6 +77,11 @@ const router = createRouter({
       name: 'edit-advisor',
       component: EditAdvisorDetail,
       props: true
+    },
+    {
+      path: '/login-AJ',
+      name: 'login-AJ',
+      component: AdvisorLogin
     }
   ]
 })
