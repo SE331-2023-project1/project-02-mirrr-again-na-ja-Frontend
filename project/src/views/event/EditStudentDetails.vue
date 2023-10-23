@@ -81,7 +81,7 @@ export default defineComponent({
     <div class="px-5">
       <button
         type="submit"
-        class="mt-3 bg-red-600 hover:shadow-grey-300 hover:shadow-lg hover:font-bold text-white py-2 px-4 rounded"
+        class="mt-3 bg-red-600 hover:shadow-grey-300 hover:shadow-lg hover:font-bold text-white text-xl py-2 px-4 rounded"
         @click="updateStudent">
         Update
       </button>

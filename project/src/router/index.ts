@@ -3,12 +3,13 @@ import StudentView from '../views/StudentView.vue'
 import AdvisorView from '../views/AdvisorView.vue'
 import AdvisorDetails from '@/views/event/AdvisorDetails.vue'
 import StudentDetails from '@/views/event/StudentDetails.vue'
-import LoginView from '../views/LoginView.vue'
+import LoginView from '@/views/LoginView.vue'
 import NProgress from 'nprogress'
 
 import AdvisorMainPage from '@/views/Advisor/AdvisorMainPage.vue'
 import AdvisorAnnouncement from '@/views/Advisor/AdvisorAnnouncement.vue'
-import EditStudentDetail from '@/views/event/EditStudentDetail.vue'
+import EditStudentDetail from '@/views/event/EditStudentDetails.vue'
+import RegisterView from '@/views/RegisterView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterView
     },
     {
       path: '/advisor/:id',
