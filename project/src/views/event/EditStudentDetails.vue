@@ -56,6 +56,7 @@ export default defineComponent({
     <form class="font-mono px-5 text-2xl">
     <div><img :src="currentStudent.image" class="object-scale-down rounded-md" /></div>
       <div class="pt-4 mb-4">
+        
         <label for="Name" class="block text-zinc-700 font-bold mb-2">Name:</label>
         <input
           type="text"

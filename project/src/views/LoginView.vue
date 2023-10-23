@@ -18,7 +18,7 @@
           class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="username"
           type="text"
-          placeholder=" Email "
+          placeholder="Email"
         />
       </p>
       <p>
@@ -27,7 +27,7 @@
           class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="password"
           type="password"
-          placeholder=" Password "
+          placeholder="Password"
         />
       </p>
       <button class="bg-red-500 text-white rounded-xl h-11 w-28 mt-4 text-2xl hover:font-bold" type="submit">Login</button>
