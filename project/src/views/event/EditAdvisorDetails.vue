@@ -14,7 +14,7 @@ export default defineComponent({
   },
   methods: {
     getStudet(id: any) {
-      StudentService.getStudentById(id)
+      AdvisorService.getAdvisorById(id)
         .then((response: ResponseData) => {
           this.currentStudent = response.data;
           console.log(response.data);
@@ -30,7 +30,7 @@ export default defineComponent({
         surname: this.currentStudent.surname,
         image: this.currentStudent.image,
       };
-      StudentService.updateStudentById(this.currentStudent.id, data)
+      AdvisorService.updateAdvisorById(this.currentStudent.id, data)
         .then((response: ResponseData) => {
           console.log(response.data);
           this.message = "The student information was updated successfully!";
@@ -78,7 +78,7 @@ export default defineComponent({
       </p>
     </div>
     <UploadImage v-model="currentStudent.image" />
-    <div class="px-5">
+    <div class="px-5 text-2xl">
       <button
         type="submit"
         class="mt-3 bg-red-600 hover:shadow-grey-300 hover:shadow-lg hover:font-bold text-white py-2 px-4 rounded"

@@ -18,7 +18,7 @@ export default {
         return apiClient.get<StudentItem>('student/' + id.toString())
     },
     updateStudentById(id: any, student: any): Promise<AxiosResponse<StudentItem>> {
-        return apiClient.put<StudentItem>("/students/" + id.toString(), student);
+        return apiClient.put<StudentItem>("/student/" + id.toString(), student);
     }    
 }
 
