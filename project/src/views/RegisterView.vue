@@ -10,33 +10,33 @@
   </div>
   <div class="text-5xl text-center font-mono">Register</div>
   <div class="mt-6 font-mono">
-    <form @submit.prevent="register" class="text-2xl">
-      <p class="pl-72">
-        <label for="Name" class="block font-bold mb-2">Name:</label>
+    <form @submit.prevent="register" class="text-2xl text-center">
+      <p class="">
+        <label for="Name" class="block font-bold mb-2 pr-96 mr-64">Name:</label>
         <input
           class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="name"
           type="text"
           placeholder="Name"/>
       </p>
-      <p class="pl-72">
-        <label for="Name" class="block font-bold mt-3">Surname: </label>
+      <p class="">
+        <label for="Name" class="block font-bold mt-3 pr-96 mr-56">Surname: </label>
         <input
           class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="surname"
           type="text"
           placeholder="Surname"/>
       </p>
-      <p class="pl-72">
-        <label for="Name" class="block font-bold mt-3">Email: </label>
+      <p class="">
+        <label for="Name" class="block font-bold mt-3 pr-96 mr-64">Email: </label>
         <input
         class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="email"
           type="text"
           placeholder="Email"/>
       </p>
-      <p class="pl-72">
-        <label for="Name" class="block font-bold mt-3">Password: </label>
+      <p class="">
+        <label for="Name" class="block font-bold mt-3 pr-96 mr-52">Password: </label>
         <input
           class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="password"
