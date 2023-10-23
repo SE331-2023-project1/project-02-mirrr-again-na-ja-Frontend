@@ -13,6 +13,8 @@ import RegisterView from '@/views/RegisterView.vue'
 import EditAdvisorDetail from '@/views/event/EditAdvisorDetails.vue'
 import AdvisorLogin from "@/views/Advisor/AdvisorLogin.vue";
 import SelectUserView from "@/views/SelectUserView.vue";
+import AdminLogin from "@/views/Admin/AdminLogin.vue";
+import AdminMainPage from "@/views/Admin/AdminMainPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,8 +58,8 @@ const router = createRouter({
       props: true
     },
     {
-      path: '/AJ',
-      name: 'AJ-main',
+      path: '/main-AJ',
+      name: 'main-AJ',
       component: AdvisorMainPage,
       props: (route) => ({page: parseInt(route.query?.page as string || '1') })
     },
@@ -82,6 +84,16 @@ const router = createRouter({
       path: '/login-AJ',
       name: 'login-AJ',
       component: AdvisorLogin
+    },
+    {
+      path: '/login-AD',
+      name: 'login-AD',
+      component: AdminLogin
+    },
+    {
+      path: '/main-AD',
+      name: 'main-AD',
+      component: AdminMainPage
     }
   ]
 })
