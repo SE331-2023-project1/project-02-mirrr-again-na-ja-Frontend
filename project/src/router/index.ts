@@ -24,7 +24,8 @@ const router = createRouter({
     {
       path: '/advisor',
       name: 'advisor',
-      component: AdvisorView
+      component: AdvisorView,
+      props: (route) => ({page: parseInt(route.query?.page as string || '1') })
     },
     {
       path: '/login',

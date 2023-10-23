@@ -8,7 +8,7 @@ import AdvisorService from '@/services/AdvisorService'
 
 const advisors: Ref<AdvisorItem[]> = ref([])
 
-const totalStudent = ref<number>(0)
+const totalAdvisor = ref<number>(0)
 const props = defineProps({
   page: {
     type: Number,
@@ -19,12 +19,12 @@ const props = defineProps({
 watchEffect(() => {
   AdvisorService.getAdvisor(5, props.page).then((response: AxiosResponse<AdvisorItem[]>) => {
     advisors.value = response.data
-    totalStudent.value = response.headers['x-total-count']
+    totalAdvisor.value = response.headers['x-total-count']
   })
 })
 
 const hasNextPage = computed(() => {
-  const totalPages = Math.ceil(totalStudent.value / 5)
+  const totalPages = Math.ceil(totalAdvisor.value / 5)
   return props.page.valueOf() < totalPages
 })
 </script>

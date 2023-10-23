@@ -15,9 +15,9 @@ export default {
         return apiClient.get<AdvisorItem[]>('/advisor?_limit=' + perPage + '&_page=' + page)
     },
     getAdvisorById(id: number): Promise<AxiosResponse<AdvisorItem>>{
-        return apiClient.get<AdvisorItem>('advisor/'+ id.toString())
+        return apiClient.get<AdvisorItem>('advisor/' + id.toString())
     },
     updateAdvisorById(id: any, advisor: any): Promise<AxiosResponse<AdvisorItem>> {
         return apiClient.put<AdvisorItem>("/advisor/" + id.toString(), advisor);
-    }
+    }  
 }
