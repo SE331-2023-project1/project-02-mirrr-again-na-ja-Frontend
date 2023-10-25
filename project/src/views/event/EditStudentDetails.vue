@@ -56,6 +56,7 @@ export default defineComponent({
     <form class="font-mono px-5 text-2xl">
     <div><img :src="currentStudent.image" class="object-scale-down rounded-md" /></div>
       <div class="pt-4 mb-4">
+        
         <label for="Name" class="block text-zinc-700 font-bold mb-2">Name:</label>
         <input
           type="text"
@@ -81,7 +82,7 @@ export default defineComponent({
     <div class="px-5">
       <button
         type="submit"
-        class="mt-3 bg-red-600 hover:shadow-grey-300 hover:shadow-lg hover:font-bold text-white py-2 px-4 rounded"
+        class="mt-3 bg-red-600 hover:shadow-grey-300 hover:shadow-lg hover:font-bold text-white text-xl py-2 px-4 rounded"
         @click="updateStudent">
         Update
       </button>

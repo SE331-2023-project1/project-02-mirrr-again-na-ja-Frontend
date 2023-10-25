@@ -10,28 +10,32 @@
     />
   </div>
   <div class="text-5xl text-center font-mono">Login</div>
-  <div class="text-center mt-4 font-mono">
+  <div class="text-center mt-4 font-mono text-2xl">
     <form @submit.prevent="login">
       <p>
-        <text class="text-2xl">Email: </text>
+        <label for="Name" class="mr-96 pr-64 block font-bold mt-3">Email: </label>
         <input
-          class="border-black border-2 w-72 h-10 text-xl"
+          class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="username"
           type="text"
-          placeholder=" Email "
+          placeholder="Email"
         />
       </p>
       <p>
-        <text class="text-2xl">Password: </text>
+        <label for="Name" class="mr-96 pr-52 block font-bold mt-3">Password: </label>
         <input
-          class="border-black border-2 mt-4 w-72 h-10 text-xl"
+          class="w-4/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 mt-2"
           v-model="password"
           type="password"
-          placeholder=" Password "
+          placeholder="Password"
         />
       </p>
-      <button class="bg-red-600 text-white rounded-xl h-11 w-28 mt-4 text-2xl" type="submit">Login</button>
+      <button class="bg-red-500 text-white rounded-xl h-11 w-28 mt-4 text-2xl hover:font-bold" type="submit">Login</button>
     </form>
+    <div>
+      <p class="pt-5 text-3xl">Or</p>
+      <p class="pt-3 text-2xl text-black">For New Student Please <RouterLink class="font-bold hover:uppercase" :to="{name:'register'}">Register</RouterLink></p>
+    </div>
   </div>
 </template>
 
