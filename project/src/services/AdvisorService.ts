@@ -19,5 +19,8 @@ export default {
     },
     updateAdvisorById(id: any, advisor: any): Promise<AxiosResponse<AdvisorItem>> {
         return apiClient.put<AdvisorItem>("/advisor/" + id.toString(), advisor);
+    },
+    saveAdvisor(advisor: AdvisorItem): Promise<AxiosResponse<AdvisorItem>> {
+        return apiClient.post<AdvisorItem>('/advisor', advisor)
     }  
 }

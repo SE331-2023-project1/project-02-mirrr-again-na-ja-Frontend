@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { StudentItem } from '@/type'
 import { ref } from 'vue'
+import StudentService from '@/services/StudentService';
+import { useRouter } from 'vue-router';
+import { useMessageStore } from '@/stores/message';
+const store = useMessageStore()
 const student = ref<StudentItem>({
     id: 0,
     name: '',
@@ -9,11 +13,26 @@ const student = ref<StudentItem>({
     image: '',
     advisorID: 0,
 })
+
+const router = useRouter()
+function saveStudent() {
+    StudentService.saveStudent(student.value)
+    .then((response) => {
+        console.log(response.data)
+        router.push({
+            name: 'student-detail',
+            params: { id:response.data.id }
+        })
+        store.updateMessage('You are successfully adding a new student named ' + response.data.name + response.data.surname)
+        setTimeout(() => {
+            store.resetMessage()}, 3000)
+    })
+}
 </script>
 <template>
     <div class="font-mono py-4">
         <div class="text-center text-4xl font-bold">Add New Student</div>
-        <form class="py-6 px-96 text-3xl">
+        <form class="py-6 px-96 text-3xl" @submit.prevent="saveStudent">
             <div class="pt-4 mb-4">
                 <label class="block text-zinc-700 font-bold mb-2">Name:</label>
                 <input v-model="student.name" type="text" placeholder="Name" class="w-6/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"/>

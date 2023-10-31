@@ -19,6 +19,9 @@ export default {
     },
     updateStudentById(id: any, student: any): Promise<AxiosResponse<StudentItem>> {
         return apiClient.put<StudentItem>("/student/" + id.toString(), student);
-    }    
+    },
+    saveStudent(student: StudentItem): Promise<AxiosResponse<StudentItem>> {
+        return apiClient.post<StudentItem>('/student', student)
+    }
 }
 
