@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <h4>hi</h4>
+  <nav>
+    <RouterLink :to="{name: 'add-student' }">Add New Student</RouterLink>
+  </nav>
 </template>
 
 <style scoped>
