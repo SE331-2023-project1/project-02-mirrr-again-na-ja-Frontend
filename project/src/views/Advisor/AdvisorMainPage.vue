@@ -50,11 +50,11 @@ const hasNextPage = computed(() => {
         <StudentCard v-for="student in students" :key="student.id" :student="student"></StudentCard>
       </div>
       <div class="text-center my-10 space-x-10">
-        <RouterLink class="hover:font-bold" :to="{ name: 'AJ-main', query: { page: page - 1 } }" rel="prev" v-if="page != 1">
+        <RouterLink class="hover:font-bold" :to="{ name: 'main-AJ', query: { page: page - 1 } }" rel="prev" v-if="page != 1">
           Prev Page
         </RouterLink>
 
-        <RouterLink class="hover:font-bold" :to="{ name: 'AJ-main', query: { page: page + 1 } }" rel="next" v-if="hasNextPage">
+        <RouterLink class="hover:font-bold" :to="{ name: 'main-AJ', query: { page: page + 1 } }" rel="next" v-if="hasNextPage">
           Next Page
         </RouterLink>
       </div>
