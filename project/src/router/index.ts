@@ -16,6 +16,8 @@ import SelectUserView from "@/views/SelectUserView.vue";
 import AdminLogin from "@/views/Admin/AdminLogin.vue";
 import AdminMainPage from "@/views/Admin/AdminMainPage.vue";
 import AddNewStudent from "@/views/AddNewStudentView.vue";
+import AddNewAdvisor from "@/views/AddNewAdvisorView.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -101,6 +103,11 @@ const router = createRouter({
       path: '/add-student',
       name: 'add-student',
       component: AddNewStudent
+    },
+    {
+      path: '/add-advisor',
+      name: 'add-advisor',
+      component: AddNewAdvisor
     }
   ]
 })
