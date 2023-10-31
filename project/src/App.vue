@@ -25,16 +25,21 @@ const { message } = storeToRefs(store)
     </nav>
     <div class="space-x-20 text-center font-mono text-2xl pt-2 pb-5">
       <RouterLink
-        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold"
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold uppercase"
         :to="{ name: 'student' }"
-        >STUDENT</RouterLink
+        >Student</RouterLink
       >
       <RouterLink
-        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold"
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold uppercase"
         :to="{ name: 'advisor' }"
-        >ADVISOR</RouterLink
+        >Adviser</RouterLink
       >
-    </div>
+      <RouterLink
+        class="text-black hover:shadow-grey-300 hover:shadow-lg hover:font-bold uppercase"
+        :to="{ name: 'add-student' }"
+        >Add Student</RouterLink
+      >
+      </div>
     <RouterView />
   </header>
 </template>

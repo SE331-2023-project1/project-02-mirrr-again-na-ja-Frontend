@@ -11,6 +11,7 @@ import AdvisorAnnouncement from '@/views/Advisor/AdvisorAnnouncement.vue'
 import EditStudentDetail from '@/views/event/EditStudentDetails.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import EditAdvisorDetail from '@/views/event/EditAdvisorDetails.vue'
+import AddEventView from '@/views/EventFormView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -71,6 +72,11 @@ const router = createRouter({
       name: 'edit-advisor',
       component: EditAdvisorDetail,
       props: true
+    },
+    {
+      path: '/add-student',
+      name: 'add-student',
+      component: AddEventView
     }
   ]
 })
