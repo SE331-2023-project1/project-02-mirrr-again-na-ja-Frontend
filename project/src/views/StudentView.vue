@@ -30,7 +30,7 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  <main class="font-mono flex justify-center">
+  <main class="font-mono flex justify-center pt-10">
       <div>
         <div class="grid gap-20 grid-cols-3 mx-auto">
         <StudentCard v-for="student in students" :key="student.id" :student="student"></StudentCard>

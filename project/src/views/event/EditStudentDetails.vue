@@ -13,7 +13,7 @@ export default defineComponent({
     };
   },
   methods: {
-    getStudet(id: any) {
+    getStudent(id: any) {
       StudentService.getStudentById(id)
         .then((response: ResponseData) => {
           this.currentStudent = response.data;
@@ -36,7 +36,7 @@ export default defineComponent({
           this.message = "The student information was updated successfully!";
           setTimeout(() => {
             this.message = ""; // Clear the message
-            router.push({ name: "students" });
+            router.push({ name: "student" });
           }, 1000);
         })
         .catch((e: Error) => {
@@ -46,7 +46,7 @@ export default defineComponent({
   },
   mounted() {
     this.message = "";
-    this.getStudet(this.$route.params.id);
+    this.getStudent(this.$route.params.id);
   },
 });
 </script>
@@ -54,7 +54,7 @@ export default defineComponent({
 <template>
   <div v-if="currentStudent.id">
     <form class="font-mono px-5 text-2xl">
-    <div><img :src="currentStudent.image" class="object-scale-down rounded-md" /></div>
+    <div class="pt-4 w-60 h-50"><img :src="currentStudent.image" class="object-scale-down rounded-md" /></div>
       <div class="pt-4 mb-4">
         
         <label for="Name" class="block text-zinc-700 font-bold mb-2">Name:</label>

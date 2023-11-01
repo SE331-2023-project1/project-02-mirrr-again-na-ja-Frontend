@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="flex justify-center">
@@ -30,11 +29,24 @@
           placeholder="Password"
         />
       </p>
-      <button class="bg-red-500 text-white rounded-xl h-11 w-28 mt-4 text-2xl hover:font-bold" type="submit">Login</button>
+      <RouterLink to="student">
+              <button
+        class="bg-red-500 text-white rounded-xl h-11 w-28 mt-4 text-2xl hover:font-bold"
+        type="submit"
+      >
+        Login
+      </button>
+      </RouterLink>
+
     </form>
     <div>
       <p class="pt-5 text-3xl">Or</p>
-      <p class="pt-3 text-2xl text-black">For New Student Please <RouterLink class="font-bold hover:uppercase" :to="{name:'register'}">Register</RouterLink></p>
+      <p class="pt-3 text-2xl text-black">
+        For New Student Please
+        <RouterLink class="font-bold hover:uppercase" :to="{ name: 'register' }"
+          >Register</RouterLink
+        >
+      </p>
     </div>
   </div>
 </template>
