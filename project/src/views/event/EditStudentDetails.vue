@@ -13,7 +13,7 @@ export default defineComponent({
     };
   },
   methods: {
-    getStudent(id: any) {
+    getStudet(id: any) {
       StudentService.getStudentById(id)
         .then((response: ResponseData) => {
           this.currentStudent = response.data;
@@ -36,7 +36,7 @@ export default defineComponent({
           this.message = "The student information was updated successfully!";
           setTimeout(() => {
             this.message = ""; // Clear the message
-            router.push({ name: "student" });
+            router.push({ name: "students" });
           }, 1000);
         })
         .catch((e: Error) => {
@@ -46,30 +46,34 @@ export default defineComponent({
   },
   mounted() {
     this.message = "";
-    this.getStudent(this.$route.params.id);
+    this.getStudet(this.$route.params.id);
   },
 });
+</script>
+<script setup lang="ts">
 </script>
 
 <template>
   <div v-if="currentStudent.id">
-    <form class="font-mono px-5 text-2xl">
-    <div class="pt-4 w-60 h-50"><img :src="currentStudent.image" class="object-scale-down rounded-md" /></div>
-      <div class="pt-4 mb-4">
-        
-        <label for="Name" class="block text-zinc-700 font-bold mb-2">Name:</label>
+    <form>
+      <div class="mb-4">
+        <label for="Name" class="block text-gray-700 font-bold mb-2"
+          >Name</label
+        >
         <input
           type="text"
           v-model="currentStudent.name"
-          class="w-6/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+          class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
       <div class="mb-4">
-        <label for="Surname" class="block text-zinc-700 font-bold mb-2">Surname:</label>
+        <label for="Surname" class="block text-gray-700 font-bold mb-2"
+          >Surname</label
+        >
         <input
           id="description"
           v-model="currentStudent.surname"
-          class="w-6/12 border-gray-600 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+          class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
     </form>
@@ -79,11 +83,12 @@ export default defineComponent({
       </p>
     </div>
     <UploadImage v-model="currentStudent.image" />
-    <div class="px-5">
+    <div>
       <button
         type="submit"
-        class="mt-3 bg-red-600 hover:shadow-grey-300 hover:shadow-lg hover:font-bold text-white text-xl py-2 px-4 rounded"
-        @click="updateStudent">
+        class="mt-3 bg-red-800 hover:bg-red-500 text-white font-bold py-2 px-4 rounded"
+        @click="updateStudent"
+      >
         Update
       </button>
     </div>
